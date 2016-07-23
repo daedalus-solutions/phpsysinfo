@@ -85,7 +85,7 @@ PLUGINS="PS,PSStatus,UpdateNotifier"
 ; static: static page (use metatag to reload page)
 ; bootstrap: use twitter bootstrap template
 ;
-DEFAULT_DISPLAY_MODE="auto"
+DEFAULT_DISPLAY_MODE="bootstrap"
 
 
 ; Define the default language
