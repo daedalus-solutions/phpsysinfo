@@ -71,7 +71,7 @@ SUDO_COMMANDS=false
 ; - Uprecords      - show uprecords info
 ; - Iptables       - show iptables rules list
 ;
-PLUGINS=false
+PLUGINS="PS,PSStatus,UpdateNotifier"
 
 
 ; ********************************
