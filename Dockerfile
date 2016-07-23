@@ -1,7 +1,9 @@
 # phpSysInfo
 # VERSION       2
 
-FROM ubuntu:14.04
+# Set the base image to phusion/baseimage
+FROM phusion/baseimage:0.9.18
+CMD ["/sbin/my_init"]
 
 MAINTAINER phpSysInfo
 
