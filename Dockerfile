@@ -1,5 +1,5 @@
 # phpSysInfo
-# VERSION       2
+# VERSION       2.0.1
 
 # Set the base image to phusion/baseimage
 FROM phusion/baseimage:0.9.18
@@ -13,11 +13,12 @@ RUN apt-get update
 
 RUN apt-get install -y apache2 php5 git pciutils
 
-RUN git clone https://github.com/phpsysinfo/phpsysinfo.git /var/www/html/phpsysinfo
+#RUN git clone https://github.com/phpsysinfo/phpsysinfo.git /var/www/html/phpsysinfo
+RUN git clone https://github.com/daedalus-solutions/phpsysinfo.git /var/www/html/phpsysinfo
 #RUN cp /var/www/html/phpsysinfo/phpsysinfo.ini.new /var/www/html/phpsysinfo/phpsysinfo.ini
 RUN cat /var/www/html/phpsysinfo/phpsysinfo.ini.new | sed 's/^LOAD_BAR=false/LOAD_BAR=true/' > /var/www/html/phpsysinfo/phpsysinfo.ini
-RUN sed 's/^PLUGINS=false/PLUGINS="PS,PSStatus"/' /var/www/html/phpsysinfo/phpsysinfo.ini
-RUN sed 's/^DEFAULT_DISPLAY_MODE="auto"/DEFAULT_DISPLAY_MODE="bootstrap"/' /var/www/html/phpsysinfo/phpsysinfo.ini
+#RUN sed 's/^PLUGINS=false/PLUGINS="PS,PSStatus"/' /var/www/html/phpsysinfo/phpsysinfo.ini
+#RUN sed 's/^DEFAULT_DISPLAY_MODE="auto"/DEFAULT_DISPLAY_MODE="bootstrap"/' /var/www/html/phpsysinfo/phpsysinfo.ini
 
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
